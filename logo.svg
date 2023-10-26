@@ -4,27 +4,16 @@
 
   <style>
     .first-l {
-      stroke: #2f87fa;
-    }
-    .first-l-fill {
-      fill: #2f87fa;
+      stroke: #2b7be3;
     }
     .second-l {
-      stroke: #b039fa;
-    }
-    .second-l-fill {
-      fill: #b039fa;
+      stroke: #a532ed;
     }
   </style>
-
-  <!-- background -->
-  <rect fill='#f0f0f0' width='7' height='7' />
 
   <g transform='rotate(-45 3.5 3.5)'>
     <path class='first-l' d="M 2.5 1 L 2.5 4.5 L 4 4.5" fill='none' stroke-width='1' />
     <path class='second-l' d="M 3 2.5 L 4.5 2.5 L 4.5 6" fill='none' stroke-width='1' />
-    <rect class='first-l-fill' x='4' y='4' width='1' height='1' />
-    <rect class='second-l-fill' x='2' y='2' width='1' height='1' />
   </g>
 
 </svg>
