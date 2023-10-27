@@ -60,6 +60,10 @@
         padding: 10px;
       }
     
+      .index-link:any-link {
+        color: var(--text-color);
+      }
+    
       .index-label {
         font-size: 1.6em;
         font-weight: bold;
@@ -70,7 +74,7 @@
         align-items: center;
       }
     
-      @media (min-width: 960px) {
+      @media (min-width: 1100px) {
         .navbar {
           flex-direction: column;
           position: fixed;
@@ -118,24 +122,31 @@
       <div class='index'>
         <div class='index-label'>Page Index</div>
         <ul>
-          <li><a href='#introduction'>What is LastLogin?</a></li>
+          <li><a class='index-link' href='#intro'>Introduction</a></li>
+          <li><a class='index-link' href='#demo'>Demo</a></li>
           <li>
-            <a href='#faq'>FAQ</a>
+            <a class='index-link' href='#faq'>FAQ</a>
             <ul>
-              <li>
-                <a href='#faq-privacy-focused'>What does "privacy-focused" mean?</a>
-              </li>
+              <li><a class='index-link' href='#why'>Why did you make this?</a></li>
+              <li><a class='index-link' href='#how'>How does it work?</a></li>
+              <li><a class='index-link' href='#what-is-decentralized-login'>What is a decentralized login system?</a></li>
+              <li><a class='index-link' href='#why-another-provider'>How does adding another centralized login provider push the web towards decentralized login?</a></li>
+
+              <li><a class='index-link' href='#privacy-focused'>How is LastLogin privacy-focused?</a></li>
+              <li><a class='index-link' href='#security'>How does LastLogin improve security?</a></li>
+              <li><a class='index-link' href='#why-upstream-social'>Why does LastLogin let me add identities with social providers? Can't the app or website just use those directly?</a></li>
+              <li><a class='index-link' href='#passkeys'>Aren't we all switching to passkeys anyway?</a></li>
             </ul>
           </li>
           <li>
-            <a href='#donate'>Donate</a>
+            <a class='index-link' href='#donate'>Donate</a>
           </li>
         </ul>
       </div>
 
       <main class='content'>
 
-        <h1 id='introduction'>What is LastLogin?</h1>
+        <h1 id='intro'>Introduction</h1>
         <p>
           LastLogin is a donation-funded login provider. It enables you to log
           in to apps and websites with the convenience of "social login"
@@ -157,7 +168,17 @@
           or sensitive user data.
         </p>
 
-        <h1 id=''>Why did you make this?</h1>
+        <h1 id='demo'>Demo</h1>
+        <p>
+          The easiest way to see LastLogin in action is to use it to log in
+          to the <a href='https://forum.indiebits.io/'>IndieBits forums</a>.
+          That is also where support for LastLogin is provided.
+        </p>
+
+
+        <h1 id='faq'>FAQ</h1>
+
+        <h2 id='why'>Why did you make this?</h2>
         <p>
           I wanted my users to have the convenience of social login without
           sacrificing their privacy. Personally I also have been using
@@ -166,9 +187,9 @@
           alternatives so I made one.
         </p>
 
-        <h1 id=''>How does it work?</h1>
+        <h2 id='how'>How does it work?</h2>
         <p>
-          The best way to get a feel is to try the demo below. The core user
+          The best way to get a feel is to try the demo. The core user
           experience is very similarly to current login providers. An app or
           website will have a "Sign in with LastLogin" button alongside the
           others.
@@ -183,17 +204,7 @@
           want to use.
         </p>
 
-        <h1 id='demo'>Demo</h1>
-        <p>
-          The easiest way to see LastLogin in action is to use it to log in
-          to the <a href='https://forum.indiebits.io/'>IndieBits forums</a>.
-          That is also where support for LastLogin is provided.
-        </p>
-
-
-        <h1 id='faq'>FAQ</h1>
-
-        <h2 id=''>What is a decentralized login system?</h2>
+        <h2 id='what-is-decentralized-login'>What is a decentralized login system?</h2>
         <p>
           Almost everything you do online is tied to an account or online
           identity. When you use a "Sign in with Google" button or a gmail
@@ -216,7 +227,7 @@
 
 
 
-        <h2 id=''>How does adding another centralized login
+        <h2 id='why-another-provider'>How does adding another centralized login
           provider push the web towards decentralized login?</h2>
         <p>
           It's a chicken-egg problem. Apps and websites aren't going to
@@ -236,7 +247,7 @@
           control.
         </p>
 
-        <h2 id='faq-privacy-focused'>What does "privacy-focused" mean?</h2>
+        <h2 id='privacy-focused'>How is LastLogin privacy-focused?</h2>
         <p>
           When you use a social login provider such as Google, that provider
           knows and keeps a record of every app and website you sign in to.
@@ -253,7 +264,7 @@
           our users.
         </p>
 
-        <h2 id='faq-security'>How does LastLogin improve security?</h2>
+        <h2 id='security'>How does LastLogin improve security?</h2>
         <p>
           Since we only handle the minimal login information (email address),
           the consequences of any security breach in either an app you use
@@ -265,7 +276,7 @@
           things like phishing attacks much more dangerous.
         </p>
 
-        <h2 id=''>Why does LastLogin let me add identities with social
+        <h2 id='why-upstream-social'>Why does LastLogin let me add identities with social
           providers? Can't the app or website just use those directly?</h2>
         <p>
           Yes, however going through LastLogin provides some benefits. First
