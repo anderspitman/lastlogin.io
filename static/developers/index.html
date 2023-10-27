@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <!-- tuplate_start(templates/head.html) -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="icon" href="/logo.png">
+    
+    <style>
+      :root {
+        --text-color: #222;
+        --border-radius: 5px;
+        --all-width: 960px;
+        --content-width: 720px;
+      }
+    
+      .all {
+        font-family: Arial;
+        font-size: 1.2em;
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: auto;
+        gap: 5px;
+      }
+    
+      .navbar {
+        font-size: 1.6em;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 2px solid var(--text-color);
+        border-radius: var(--border-radius);
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+    
+      .navbar-link:any-link {
+        color: var(--text-color);
+      }
+    
+      .content {
+        max-width: 720px;
+        border: 2px solid var(--text-color);
+        border-radius: var(--border-radius);
+        padding: 10px;
+      }
+    
+      .index {
+        display: none;
+        flex-direction: column;
+        border: 2px solid var(--text-color);
+        border-radius: var(--border-radius);
+        padding: 10px;
+      }
+    
+      .index-label {
+        font-size: 1.6em;
+        font-weight: bold;
+      }
+    
+      .aligned-row {
+        display: flex;
+        align-items: center;
+      }
+    
+      @media (min-width: 960px) {
+        .navbar {
+          flex-direction: column;
+          position: fixed;
+          right: calc(var(--content-width) + ((100vw - var(--content-width)) / 2));
+        }
+    
+        .all {
+          flex-direction: row;
+          /*
+          max-width: 960px;
+          */
+        }
+    
+        .index {
+          position: fixed;
+          left: calc(var(--content-width) + ((100vw - var(--content-width)) / 2));
+          display: flex;
+        }
+      }
+    
+    </style>
+    <!-- tuplate_end -->
+
+  </head>
+
+  <body>
+
+    <div class='all'>
+      <!-- tuplate_start(templates/navbar.html) -->
+      <nav class='navbar'>
+        <a class='navbar-link aligned-row' href='/'>
+          <img src='/logo.png' width=64 height=64 />
+        </a>
+        <a class='navbar-link' href='/'>Home</a>
+        <a class='navbar-link' href='/blog'>Blog</a>
+        <a class='navbar-link' href='/developers/'>Developers</a>
+        <a class='navbar-link' href='https://forum.indiebits.io/c/lastlogin/12'>Support</a>
+        <a class='navbar-link' href='https://github.com/anderspitman/obligator'>Code</a>
+      </nav>
+      <!-- tuplate_end -->
+
+      <main class='content'>
+
+        <h1 id='quickstart'>Quickstart</h1>
+        <p>
+          To integrate your app or website with LastLogin, simply configure a
+          standard OpenID Connect provider, set the <code>client_id</code> to
+          the domain of your app (including the <code>https://</code>), and
+          leave the <code>client_secret</code> blank. Make sure the
+          <code>redirect_uri</code> is on the same domain, ie
+          <code>client_id</code> must be a string prefix of
+          <code>redirect_uri</code>. This ensures security against phishing
+          attacks since the user will be shown your domain when they attempt
+          to log in.
+        </p>
+
+        <p>
+          <a href='https://openidconnect.net/'>openidconnect.net</a> is a great
+          website for testing. See
+          <a href='https://github.com/anderspitman/obligator#demo'>the steps</a>
+          in the repo to try it.
+        </p>
+
+        <h1 id='dev-faq'>Developer FAQ</h1>
+
+        <h2 id=''>What are the main ways LastLogin is different?</h2>
+
+        <p>
+          Many of the technical aspects are explained in the README for the
+          <a href='https://github.com/anderspitman/obligator'>obligator OpenID Connect server</a>,
+          which is the primary software LastLogin is built on.
+        </p>
+
+        Here's a brief high-level list:
+
+        <ul>
+          <li>
+            Identity built on email. Email isn't perfect, but it's the
+            decentralized global identfier we have today. LastLogin fully
+            embraces email, and plans to add other forms of decentralized
+            identity in the future, such as
+            <a href='https://matrix.org/'>Matrix<a> and
+            <a href='https://www.w3.org/TR/activitypub/'>ActivityPub</a>.
+          </li>
+          <li>
+            Very easy to integrate with. Standard OpenID Connect but you don't
+            have to pre-register your client application. This means it also
+            works great for software that is intended to be self-hosted.
+          </li>
+          <li>
+            Designed for security. Tiny, focused codebase that avoids
+            dependencies whenever reasonable (we don't roll our own crypto).
+          </li>
+          <li>
+            Highly performant and scalable. It was designed from the ground-up
+            to be globally distributed with minimal state. We run on
+            <a href='https://fly.io/'>Fly.io</a>, which puts our servers
+            close to you and your users wherever you are.
+          </li>
+          <li>
+            Fast UI that works great with JavaScript turned off.
+          </li>
+          <li>
+            User-focused experience and features.
+          </li>
+        </ul>
+
+      </main>
+
+      
+    </div>
+  </body>
+
+</html>

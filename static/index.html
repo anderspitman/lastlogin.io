@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <!-- tuplate_start(templates/head.html) -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="icon" href="/logo.png">
+    
+    <style>
+      :root {
+        --text-color: #222;
+        --border-radius: 5px;
+        --all-width: 960px;
+        --content-width: 720px;
+      }
+    
+      .all {
+        font-family: Arial;
+        font-size: 1.2em;
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: auto;
+        gap: 5px;
+      }
+    
+      .navbar {
+        font-size: 1.6em;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 2px solid var(--text-color);
+        border-radius: var(--border-radius);
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+    
+      .navbar-link:any-link {
+        color: var(--text-color);
+      }
+    
+      .content {
+        max-width: 720px;
+        border: 2px solid var(--text-color);
+        border-radius: var(--border-radius);
+        padding: 10px;
+      }
+    
+      .index {
+        display: none;
+        flex-direction: column;
+        border: 2px solid var(--text-color);
+        border-radius: var(--border-radius);
+        padding: 10px;
+      }
+    
+      .index-label {
+        font-size: 1.6em;
+        font-weight: bold;
+      }
+    
+      .aligned-row {
+        display: flex;
+        align-items: center;
+      }
+    
+      @media (min-width: 960px) {
+        .navbar {
+          flex-direction: column;
+          position: fixed;
+          right: calc(var(--content-width) + ((100vw - var(--content-width)) / 2));
+        }
+    
+        .all {
+          flex-direction: row;
+          /*
+          max-width: 960px;
+          */
+        }
+    
+        .index {
+          position: fixed;
+          left: calc(var(--content-width) + ((100vw - var(--content-width)) / 2));
+          display: flex;
+        }
+      }
+    
+    </style>
+    <!-- tuplate_end -->
+
+  </head>
+
+  <body>
+
+    <div class='all'>
+      <!-- tuplate_start(templates/navbar.html) -->
+      <nav class='navbar'>
+        <a class='navbar-link aligned-row' href='/'>
+          <img src='/logo.png' width=64 height=64 />
+        </a>
+        <a class='navbar-link' href='/'>Home</a>
+        <a class='navbar-link' href='/blog'>Blog</a>
+        <a class='navbar-link' href='/developers/'>Developers</a>
+        <a class='navbar-link' href='https://forum.indiebits.io/c/lastlogin/12'>Support</a>
+        <a class='navbar-link' href='https://github.com/anderspitman/obligator'>Code</a>
+      </nav>
+      <!-- tuplate_end -->
+
+      <div class='index'>
+        <div class='index-label'>Page Index</div>
+        <ul>
+          <li><a href='#introduction'>What is LastLogin?</a></li>
+          <li>
+            <a href='#faq'>FAQ</a>
+            <ul>
+              <li>
+                <a href='#faq-privacy-focused'>What does "privacy-focused" mean?</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href='#donate'>Donate</a>
+          </li>
+        </ul>
+      </div>
+
+      <main class='content'>
+
+        <h1 id='introduction'>What is LastLogin?</h1>
+        <p>
+          LastLogin is a donation-funded login provider. It enables you to log
+          in to apps and websites with the convenience of "social login"
+          (Google, Facebook, Apple, etc), while greatly improving privacy.
+          Instead of choosing from a small set of login providers, with
+          LastLogin you can use any email address you want as your identity,
+          and even choose from many different email addresses when you log in
+          to a site. LastLogin is built on open source software.
+        </p>
+        <p>
+          Our mission is to push the web toward decentralized login systems,
+          to improve user experience, choice, and security.
+        </p>
+        <p>
+          <strong>NOTE:</strong> LastLogin is currently in beta. It is not
+          recommended to integrate LastLogin into any production systems.
+        </p>
+
+        <h1 id=''>Why did you make this?</h1>
+        <p>
+          I wanted my users to have the convenience of social login without
+          sacrificing their privacy. Personally I also have been using
+          email+password whenever possible and avoiding social login, but I'm
+          tired of doing this. The UX is terrible. There weren't any
+          alternatives so I made one.
+        </p>
+
+        <h1 id=''>How does it work?</h1>
+        <p>
+          The best way to get a feel is to try the demo below. The core user
+          experience is very similarly to current login providers. An app or
+          website will have a "Sign in with LastLogin" button alongside the
+          others.
+        </p>
+        <p>
+          The main difference is in how you manage identities. When you click
+          to log in with LastLogin, you're taken to a page that lets you add
+          email identities from many sources. You can directly add an email
+          by entering a code we email you, or you can add an email using one
+          of the social providers. Once you've added some email identites,
+          whenever you log in to an app or site you can choose which one you
+          want to use.
+        </p>
+
+        <h1 id='demo'>Demo</h1>
+        <p>
+          The easiest way to see LastLogin in action is to use it to log in
+          to the <a href='https://forum.indiebits.io/'>IndieBits forums</a>.
+          That is also where support for LastLogin is provided.
+        </p>
+
+
+        <h1 id='faq'>FAQ</h1>
+
+        <h2 id=''>What is a decentralized login system?</h2>
+        <p>
+          Almost everything you do online is tied to an account or online
+          identity. When you use a "Sign in with Google" button or a gmail
+          address to create a new account, you're giving incredible power to
+          Google to observe and control access to your online life.
+        </p>
+        <p>
+          A decentralized login system puts the control back in your hands. You
+          can use any email provider you want, and still get the convenience of
+          social login. Ideally you can even use your own domain name and
+          switch between email providers easily. This fosters competition and
+          leads to much better user experience.
+        </p>
+        <p>
+          It's even possible to run your own email server, which uses
+          encryption to guarentee you are the only one with access to your
+          email and accounts. This provides ultimate control over your online
+          life.
+        </p>
+
+
+
+        <h2 id=''>How does adding another centralized login
+          provider push the web towards decentralized login?</h2>
+        <p>
+          It's a chicken-egg problem. Apps and websites aren't going to
+          implement decentralized login until there are providers that use
+          decentralized protocols, and login providers aren't going to
+          implement decentralized login until users and developers demand it.
+          LastLogin is a stepping stone. A temporary solution. It supports the
+          same centralized protocols as other login providers, but it will also
+          support decentralized protocols. This will allow app developers to
+          integrate with LastLogin using those protocols, and easily integrate
+          with other decentralized providers in the future.
+        </p>
+        <p>
+          Step one is that LastLogin supports email addresses from any
+          email provider, and let's you choose which email identity to use
+          when you log in. No social login provider gives this level of
+          control.
+        </p>
+
+        <h2 id='faq-privacy-focused'>What does "privacy-focused" mean?</h2>
+        <p>
+          When you use a social login provider such as Google, that provider
+          knows and keeps a record of every app and website you sign in to.
+        </p>
+        <p>
+          Generally social login providers are advertising companies. This is
+          no accident. There is a strong advertising incentive for them to
+          know as much about you as possible.
+        </p>
+        <p>
+          LastLogin improves privacy in several ways. First, we don't collect
+          or store any private data. Also, our incentives are much more
+          aligned. Since we don't sell ads, we have far less incentive to track
+          our users.
+        </p>
+
+        <h2 id='faq-security'>How does LastLogin improve security?</h2>
+        <p>
+          Since we only handle the minimal login information (email address),
+          the consequences of any security breach in either an app you use
+          or in our systems directly is greatly reduced.
+        </p>
+        <p>
+          Contrast this with a company like Google that provides many APIs and
+          services using the same system they use for login. This makes
+          things like phishing attacks much more dangerous.
+        </p>
+
+        <h2 id=''>Why does LastLogin let me add identities with social
+          providers? Can't the app or website just use those directly?</h2>
+        <p>
+          Yes, however going through LastLogin provides some benefits. First
+          of all, it's much easier for developers. Instead of having to
+          register their app with each social provider, jumping through many
+          hoops along the way, they only need to support LastLogin, while still
+          giving their users the convenience of social login.
+        </p>
+        <p>
+          Additionally, there's a privacy benefit here. Say you want to use
+          your Facebook account to log in to an app that supports LastLogin.
+          If you use the LastLogin option to add your Facebook identity,
+          Facebook has no idea what app you're actually logging in to. Note
+          that this isn't as helpful with Google. Although they won't know
+          directly when you're logging in, if the app sends any emails to
+          your gmail account they'll be able to infer what apps you're using.
+        </p>
+
+        <h2 id='passkeys'>Aren't we all switching to passkeys anyway?</h2>
+        <p>
+          Passkeys are awesome, and we will most likely add support for them in
+          LastLogin itself in the future. The main problem is that there's
+          currently no way to say "give X access on Y server to the owner of Z
+          passkey", unless Z passkey has already been used to log in to Y
+          server. This is a critical feature for the decentralized web. If I'm
+          running a photo server and want to give you access, I need a way to
+          do that. This is simple with email. I can just tell my server to
+          share an album with your email address, then as long as you can prove
+          you own that email address you can get at the data.
+        </p>
+        <p>
+          In addition to this, it remains to be seen to what extent companies
+          other than Google, Apple, and Microsoft are able to provide high
+          quality passkey experiences to their users. It also remains to be
+          seen to what extent passkeys will be implemented on apps an websites.
+          Passkeys are complicated to get right. Much more complicated than
+          login buttons like LastLogin. We are also skeptical that sites will
+          give up the direct access to users that an email address provides.
+          Their incentives are not aligned to do so.
+        </p>
+
+        <h1 id='donate'>Donate</h1>
+        <p>
+          LastLogin is completely donation-funded. If you find it useful, or
+          simply want it to succeed, please consider donating.
+        </p>
+      </main>
+
+      
+    </div>
+  </body>
+
+</html>

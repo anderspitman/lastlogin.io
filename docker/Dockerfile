@@ -4,6 +4,8 @@ RUN apk add --no-cache curl
 
 COPY ./obligator /obligator/obligator
 
+COPY ./static static
+
 VOLUME ["/data"]
 
 VOLUME ["/api"]
