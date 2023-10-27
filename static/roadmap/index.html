@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <title>LastLogin - Roadmap</title>
+
+    <!-- tuplate_start(templates/head.html) -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="icon" href="/logo.png">
+    
+    <style>
+      :root {
+        --text-color: #222;
+        --border-radius: 5px;
+        --all-width: 960px;
+        --content-width: 720px;
+      }
+    
+      .all {
+        font-family: Arial;
+        font-size: 1.2em;
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: auto;
+        gap: 5px;
+      }
+    
+      .navbar {
+        font-size: 1.6em;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 2px solid var(--text-color);
+        border-radius: var(--border-radius);
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+    
+      .navbar-link:any-link {
+        color: var(--text-color);
+      }
+    
+      .content {
+        max-width: 720px;
+        border: 2px solid var(--text-color);
+        border-radius: var(--border-radius);
+        padding: 10px;
+      }
+    
+      .index {
+        display: none;
+        flex-direction: column;
+        border: 2px solid var(--text-color);
+        border-radius: var(--border-radius);
+        padding: 10px;
+      }
+    
+      .index-label {
+        font-size: 1.6em;
+        font-weight: bold;
+      }
+    
+      .aligned-row {
+        display: flex;
+        align-items: center;
+      }
+    
+      @media (min-width: 960px) {
+        .navbar {
+          flex-direction: column;
+          position: fixed;
+          right: calc(var(--content-width) + ((100vw - var(--content-width)) / 2));
+        }
+    
+        .all {
+          flex-direction: row;
+          /*
+          max-width: 960px;
+          */
+        }
+    
+        .index {
+          position: fixed;
+          left: calc(var(--content-width) + ((100vw - var(--content-width)) / 2));
+          display: flex;
+        }
+      }
+    
+    </style>
+    <!-- tuplate_end -->
+
+  </head>
+
+  <body>
+
+    <div class='all'>
+      <!-- tuplate_start(templates/navbar.html) -->
+      <nav class='navbar'>
+        <a class='navbar-link aligned-row' href='/'>
+          <img src='/logo.png' width=64 height=64 />
+        </a>
+        <a class='navbar-link' href='/'>Home</a>
+        <!--
+        <a class='navbar-link' href='/blog'>Blog</a>
+        -->
+        <a class='navbar-link' href='/roadmap/'>Roadmap</a>
+        <a class='navbar-link' href='https://forum.indiebits.io/c/lastlogin/12'>Support</a>
+        <a class='navbar-link' href='/developers/'>Developers</a>
+        <a class='navbar-link' href='https://github.com/anderspitman/obligator'>Code</a>
+      </nav>
+      <!-- tuplate_end -->
+
+      <main class='content'>
+
+        <h1 id=''>Roadmap</h1>
+        <p>
+          LastLogin is currently missing several features that will be
+          necessary to accomplish our goals. Some are listed here.
+        </p>
+
+        <h1 id=''>Custom upstream providers</h1>
+        <p>
+          Users should be able to add their own OpenID Connect provider to
+          use with LastLogin. If they self-hosted their own OIDC server for
+          example, they should be able to use that server to add identities
+          for the same domain to LastLogin. This should be possible both by
+          manually adding providers and by using WebFinger to determine the
+          provider automatically for an email address.
+        </p>
+        <p>
+          This provides the most realistic paths towards decentralized login.
+          Imagine if an email provider like Fastmail implemented WebFinger and
+          allowed their users to specify an OIDC provider they want. When a
+          Fastmail user goes to log in to a website, they would enter an email
+          address (or more realistically select one they used previously or
+          have it autofilled by the browser). The site would check the email
+          server using WebFinger to see if the user has their own OIDC server
+          (perhaps also provided by the email provider). If yes, they
+          authenticate directly with their own server. If not, defer to
+          LastLogin, which can talk to the custom OIDC server directly.
+        </p> 
+
+        <h1 id=''>Wildcard email support</h1>
+        <p>
+          Many email providers allow "wildcard" email addresses to be
+          created on the fly. For example, if your gmail address is
+          alice@gmail.com. You can send an email to alice+*@gmail.com, where
+          "*" can be whatever you want. LastLogin should be able to let you
+          fill in that part when you log in to an app or site. This is
+          particularly valuable if you have your own domain name, as you can
+          generate entirely unique email addresses for each app, similar to
+          the way Apple does to preserve user privacy.
+        </p>
+
+        <h1 id=''>QR code login</h1>
+        <p>
+          Since LastLogin doesn't store any user data (it's all kept in
+          cryptographically signed browser cookies), there's no easy way to
+          transfer all your identities to a new device. This can be solved by
+          using QR codes to transfer login data by showing/scanning a code.
+        </p>
+
+        <h1 id=''>Support decentralized login protocols</h1>
+        <p>
+          LastLogin needs to support decentralized login protocols, so that
+          apps and browsers/extensions have someone to talk to. Something like
+          BrowserID from
+          <a href='https://en.wikipedia.org/wiki/Mozilla_Persona'>Mozilla Persona</a>,
+          or similar.
+        </p>
+
+        <h1 id=''>Passkeys support</h1>
+        <p>
+          Passkeys would be a great way to get an initial login cookie on
+          LastLogin, rather than requiring users to use a social login
+          provider to bootstrap trust.
+        </p>
+
+      </main>
+
+      
+    </div>
+  </body>
+
+</html>
