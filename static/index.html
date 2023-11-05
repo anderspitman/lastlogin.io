@@ -74,6 +74,17 @@
         align-items: center;
       }
     
+      .demo-screenshot-container {
+        display: flex;
+        justify-content: center;
+      }
+      .demo-screenshot {
+        width: 100%;
+        max-width: 320px;
+        border: 1px solid var(--text-color);
+        border-radius: var(--border-radius);
+      }
+    
       @media (min-width: 1100px) {
         .navbar {
           flex-direction: column;
@@ -149,7 +160,9 @@
 
         <h1 id='intro'>Introduction</h1>
         <p>
-          LastLogin is a donation-funded login provider. It enables you to log
+          LastLogin is a
+          <a href='#donate'>donation-funded</a>
+          login provider. It enables you to log
           in to apps and websites with the convenience of "social login"
           (Google, Facebook, Apple, etc), while greatly improving privacy.
           Instead of choosing from a small set of login providers, with
@@ -171,10 +184,31 @@
 
         <h1 id='demo'>Demo</h1>
         <p>
-          The easiest way to see LastLogin in action is to use it to log in
+          The best way to see LastLogin in action is to use it to log in
           to the <a href='https://forum.indiebits.io/'>IndieBits forums</a>.
           That is also where support for LastLogin is provided.
         </p>
+
+        <p>
+          There's also a demo video:
+        </p>
+        <a href='https://youtu.be/lGOdGA784QU'>YouTube mirror</a>
+        <a href='/demo.webm' download='lastlogin_demo.webm'>Download WebM/VP9</a>
+        <a href='/demo.mp4' download='lastlogin_demo.mp4'>Download MP4/h264</a>
+        
+        <video controls width="100%">
+          <source src="/demo.webm" type="video/webm">
+          <source src="/demo.mp4" type="video/mp4">
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+
+        <p>
+          Here's a screenshot of the basic UI:
+        </p>
+
+        <div class='demo-screenshot-container'>
+          <img class='demo-screenshot' src='/demo_screenshot.png' />
+        </div>
 
 
         <h1 id='faq'>FAQ</h1>
@@ -220,12 +254,9 @@
           leads to much better user experience.
         </p>
         <p>
-          It's even possible to run your own email server, which uses
-          encryption to guarantee you are the only one with access to your
-          email and accounts. This provides ultimate control over your online
-          life.
+          It's even possible to run your own email server, which provides
+          even more privacy and control.
         </p>
-
 
 
         <h2 id='why-another-provider'>How does adding another centralized login
@@ -283,7 +314,8 @@
           Yes, however going through LastLogin provides some benefits. First
           of all, it's much easier for developers. Instead of having to
           register their app with each social provider, jumping through many
-          hoops along the way, they only need to support LastLogin, while still
+          hoops along the way, they only need to support LastLogin (which also
+          happens to be the easiest provider to integrate with), while still
           giving their users the convenience of social login.
         </p>
         <p>
@@ -322,7 +354,8 @@
         <h1 id='donate'>Donate</h1>
         <p>
           LastLogin is completely donation-funded. If you find it useful, or
-          simply want it to succeed, please consider donating.
+          simply want it to succeed, please consider donating to the
+          <a href='https://patreon.com/apitman?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link'>Patreon</a>.
         </p>
       </main>
 
