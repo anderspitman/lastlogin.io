@@ -1,0 +1,26 @@
+# fly.toml app configuration file generated for sparkling-pine-9467 on 2023-10-11T08:34:12-06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "sparkling-pine-9467"
+primary_region = "sjc"
+
+[build]
+  dockerfile = "docker/Dockerfile"
+
+[http_service]
+  internal_port = 1616
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = false
+  min_machines_running = 4
+  processes = ["app"]
+
+[[files]]
+  guest_path = "/data/obligator_storage.json"
+  local_path = "./obligator_storage.json"
+
+[mounts]
+  source = "litefs"
+  destination = "/var/lib/litefs"

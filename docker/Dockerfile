@@ -12,7 +12,7 @@ ENTRYPOINT ["litefs", "mount"]
 
 COPY --from=flyio/litefs:0.5 /usr/local/bin/litefs /usr/local/bin/litefs
 
-COPY ./IP2LOCATION-LITE-DB3.IPV6.BIN /
+#COPY ./IP2LOCATION-LITE-DB3.IPV6.BIN /
 
 COPY ./litefs.yml /etc/
 COPY ./obligator /obligator/obligator

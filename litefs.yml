@@ -14,5 +14,5 @@ lease:
     key: "${FLY_APP_NAME}/primary"
 
 exec:
-  - cmd: "/obligator/obligator -geo-db-path /IP2LOCATION-LITE-DB3.IPV6.BIN -storage-dir /data -database-dir /litefs -behind-proxy"
+  - cmd: "/obligator/obligator -storage-dir /data -database-dir /litefs -behind-proxy"
 
