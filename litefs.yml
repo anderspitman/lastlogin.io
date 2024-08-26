@@ -14,5 +14,5 @@ lease:
     key: "${FLY_APP_NAME}/primary"
 
 exec:
-  - cmd: "/obligator/obligator -storage-dir /data -database-dir /litefs -behind-proxy"
+  - cmd: "/obligator/obligator -database-dir /litefs -behind-proxy"
 

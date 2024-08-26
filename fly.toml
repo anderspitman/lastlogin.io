@@ -17,10 +17,6 @@ primary_region = "sjc"
   min_machines_running = 4
   processes = ["app"]
 
-[[files]]
-  guest_path = "/data/obligator_storage.json"
-  local_path = "./obligator_storage.json"
-
 [mounts]
   source = "litefs"
   destination = "/var/lib/litefs"
