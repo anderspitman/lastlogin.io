@@ -6,9 +6,24 @@
 <style>
   :root {
     --text-color: #222;
+    --background-color: #eee;
     --border-radius: 5px;
     --all-width: 960px;
     --content-width: 720px;
+    --visited-color: #555;
+  }
+
+  body {
+    color: var(--text-color);
+    background: var(--background-color);
+  }
+
+  a {
+    color: var(--text-color);
+  }
+
+  a:visited {
+    color: var(--visited-color);
   }
 
   .all {
@@ -95,6 +110,14 @@
       position: fixed;
       left: calc(var(--content-width) + ((100vw - var(--content-width)) / 2));
       display: flex;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-color: #eee;
+      --background-color: #222;
+      --visited-color: #999;
     }
   }
 
