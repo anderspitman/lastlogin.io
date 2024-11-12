@@ -153,7 +153,7 @@
         <a class='navbar-link' href='/roadmap/'>Roadmap</a>
         <a class='navbar-link' href='https://forum.indiebits.io/c/lastlogin/12'>Support</a>
         <a class='navbar-link' href='/developers/'>Developers</a>
-        <a class='navbar-link' href='https://github.com/anderspitman/obligator'>Code</a>
+        <a class='navbar-link' href='https://github.com/lastlogin-net/obligator'>Code</a>
         <a class='navbar-link' href='/privacy/'>Privacy</a>
         <a class='navbar-link' href='/pricing/'>Pricing</a>
       </nav>
@@ -175,11 +175,7 @@
               <li><a class='index-link' href='#privacy-focused'>How is LastLogin privacy-focused?</a></li>
               <li><a class='index-link' href='#security'>How does LastLogin improve security?</a></li>
               <li><a class='index-link' href='#why-upstream-social'>Why does LastLogin let me add identities with social providers? Can't the app or website just use those directly?</a></li>
-              <li><a class='index-link' href='#passkeys'>Aren't we all switching to passkeys anyway?</a></li>
             </ul>
-          </li>
-          <li>
-            <a class='index-link' href='#donate'>Donate</a>
           </li>
         </ul>
       </div>
@@ -188,19 +184,26 @@
 
         <h1 id='intro'>Introduction</h1>
         <p>
-          LastLogin is a
-          <a href='#donate'>donation-funded</a>
-          login provider. It enables you to log
-          in to apps and websites with the convenience of "social login"
-          (Google, Facebook, Apple, etc), while greatly improving privacy.
-          Instead of choosing from a small set of login providers, with
-          LastLogin you can use any email address you want as your identity,
-          and even choose from many different email addresses when you log in
-          to a site. LastLogin is built on open source software.
+          LastLogin is a login provider. It enables you to sign in to apps and
+          websites with the convenience of "social login" (like Google,
+          Facebook, Apple, etc), while greatly improving privacy. Instead of
+          choosing from a small set of login providers, with LastLogin you can
+          use any email address you want as your identifier, and even choose
+          from many different email addresses when you log in to a site.
+          LastLogin is built on
+          <a href='https://github.com/lastlogin-net/obligator'>open source</a>
+          software.
         </p>
         <p>
           Our mission is to push the web toward decentralized identity and
           login, to improve user experience, choice, and security.
+        </p>
+
+        <h1 id='funding'>Funding</h1>
+        <p>
+          LastLogin is primarily donation-funded. If you find it useful, or
+          simply want it to succeed, please see the
+          <a href='/pricing/'>pricing page</a> for ways to donate.
         </p>
 
         <h1 id='demo'>Demo</h1>
@@ -313,7 +316,7 @@
 
         <h2 id='security'>How does LastLogin improve security?</h2>
         <p>
-          Since we only handle the minimal login information (email address),
+          Since we only require the minimal login information (email address),
           the consequences of any security breach in either an app you use
           or in our systems directly is greatly reduced.
         </p>
@@ -326,12 +329,12 @@
         <h2 id='why-upstream-social'>Why does LastLogin let me add identities with social
           providers? Can't the app or website just use those directly?</h2>
         <p>
-          Yes, however going through LastLogin provides some benefits. First
-          of all, it's much easier for developers. Instead of having to
-          register their app with each social provider, jumping through many
-          hoops along the way, they only need to support LastLogin (which also
-          happens to be the easiest provider to integrate with), while still
-          giving their users the convenience of social login.
+          Yes, however going through LastLogin provides some benefits. First of
+          all, it's much easier for developers. Instead of having to register
+          their app with each social provider, jumping through many hoops along
+          the way, they only need to support LastLogin (which also happens to
+          be the <a href='/developers/'>easiest</a> provider to integrate with),
+          while still giving their users the convenience of social login.
         </p>
         <p>
           Additionally, there's a privacy benefit here. Say you want to use
@@ -343,35 +346,6 @@
           your gmail account they'll be able to infer what apps you're using.
         </p>
 
-        <h2 id='passkeys'>Aren't we all switching to passkeys anyway?</h2>
-        <p>
-          Passkeys are awesome, and we will most likely add support for them in
-          LastLogin itself in the future. The main problem is that there's
-          currently no way to say "give X access on Y server to the owner of Z
-          passkey", unless Z passkey has already been used to log in to Y
-          server. This is a critical feature for the decentralized web. If I'm
-          running a photo server and want to give you access, I need a way to
-          do that. This is simple with email. I can just tell my server to
-          share an album with your email address, then as long as you can prove
-          you own that email address you can get at the data.
-        </p>
-        <p>
-          In addition to this, it remains to be seen to what extent companies
-          other than Google, Apple, and Microsoft are able to provide high
-          quality passkey experiences to their users. It also remains to be
-          seen to what extent passkeys will be implemented on apps an websites.
-          Passkeys are complicated to get right. Much more complicated than
-          login buttons like LastLogin. We are also skeptical that sites will
-          give up the direct access to users that an email address provides.
-          Their incentives are not aligned to do so.
-        </p>
-
-        <h1 id='donate'>Donate</h1>
-        <p>
-          LastLogin is completely donation-funded. If you find it useful, or
-          simply want it to succeed, please consider donating to the
-          <a href='https://patreon.com/apitman?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link'>Patreon</a>.
-        </p>
       </main>
 
       
